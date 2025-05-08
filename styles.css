@@ -1,24 +1,25 @@
 /* Global styles */
-@import url('https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;600;700&family=Rubik:wght@400;500;600;700&display=swap');
 
 :root {
-    --primary-color: #3f51b5;
-    --primary-dark: #303f9f;
-    --secondary-color: #bbdefb;
-    --accent-color: #ff6f00;
-    --accent-light: #ffb74d;
-    --text-color: #333;
-    --light-text-color: #666;
+    --primary-color: #4a6fdc;
+    --primary-dark: #3451b2;
+    --secondary-color: #d6e5ff;
+    --accent-color: #ff7e36;
+    --accent-light: #ffa76a;
+    --text-color: #2d3748;
+    --light-text-color: #4a5568;
     --background-color: #fff;
-    --light-bg-color: #f5f7fa;
-    --border-color: #e0e0e0;
-    --shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-    --hover-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
-    --card-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-    --btn-shadow: 0 4px 15px rgba(63, 81, 181, 0.3);
+    --light-bg-color: #f7faff;
+    --border-color: #e2e8f0;
+    --shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+    --hover-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    --card-shadow: 0 15px 35px rgba(32, 56, 117, 0.07);
+    --btn-shadow: 0 6px 20px rgba(74, 111, 220, 0.25);
     --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-    --font-family: 'Assistant', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    --border-radius: 8px;
+    --font-family: 'Assistant', 'Rubik', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    --border-radius: 12px;
+    --small-radius: 8px;
     --header-height: 70px;
 }
 
@@ -37,8 +38,9 @@ body {
     font-family: var(--font-family);
     color: var(--text-color);
     background-color: var(--background-color);
-    line-height: 1.6;
+    line-height: 1.7;
     direction: rtl;
+    font-size: 16px;
 }
 
 .container {
@@ -49,9 +51,9 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6 {
-    margin-bottom: 0.5em;
-    color: var(--primary-color);
-    font-weight: 600;
+    margin-bottom: 0.7em;
+    color: var(--primary-dark);
+    font-weight: 700;
     line-height: 1.3;
 }
 
@@ -67,10 +69,10 @@ a:hover {
 
 .btn {
     display: inline-block;
-    padding: 12px 28px;
+    padding: 14px 32px;
     background-color: var(--primary-color);
     color: white;
-    border-radius: var(--border-radius);
+    border-radius: 50px;
     text-align: center;
     font-weight: bold;
     border: none;
@@ -80,13 +82,14 @@ a:hover {
     position: relative;
     overflow: hidden;
     z-index: 1;
+    font-size: 1.05rem;
 }
 
 .btn:hover {
     background-color: var(--accent-color);
     color: white;
-    transform: translateY(-3px);
-    box-shadow: 0 7px 20px rgba(255, 111, 0, 0.3);
+    transform: translateY(-4px);
+    box-shadow: 0 10px 25px rgba(255, 126, 54, 0.3);
 }
 
 .btn:active {
@@ -115,10 +118,12 @@ a:hover {
 header {
     background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
     color: white;
-    padding: 2rem 0;
+    padding: 3rem 0;
     text-align: center;
     position: relative;
     overflow: hidden;
+    border-bottom-left-radius: 30% 5%;
+    border-bottom-right-radius: 30% 5%;
 }
 
 header::before {
@@ -128,16 +133,22 @@ header::before {
     left: -10%;
     width: 120%;
     height: 120%;
-    background: radial-gradient(circle, transparent 20%, rgba(0, 0, 0, 0.1) 70%);
+    background: repeating-linear-gradient(
+        45deg,
+        rgba(255, 255, 255, 0.03) 0px,
+        rgba(255, 255, 255, 0.03) 10px,
+        transparent 10px,
+        transparent 20px
+    );
     opacity: 0.7;
 }
 
 header h1 {
     color: white;
-    font-size: 2.8rem;
-    margin-bottom: 0.2rem;
+    font-size: 3.2rem;
+    margin-bottom: 0.3rem;
     position: relative;
-    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
 }
 
 header .tagline {
@@ -180,6 +191,8 @@ nav ul li a {
     font-weight: 600;
     position: relative;
     color: var(--text-color);
+    transition: var(--transition);
+    font-size: 1.05rem;
 }
 
 nav ul li a::after {
@@ -188,9 +201,10 @@ nav ul li a::after {
     bottom: 0;
     right: 0;
     width: 0;
-    height: 2px;
+    height: 3px;
     background-color: var(--accent-color);
     transition: width 0.3s ease;
+    border-radius: 3px;
 }
 
 nav ul li a:hover {
@@ -204,8 +218,9 @@ nav ul li a:hover::after {
 /* Hero section */
 .hero {
     background: linear-gradient(to bottom, var(--secondary-color), var(--light-bg-color));
+    background-image: url('data:image/svg+xml,%3Csvg width="100" height="100" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"%3E%3Cpath d="M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z" fill="%234a6fdc" fill-opacity="0.05" fill-rule="evenodd"/%3E%3C/svg%3E');
     color: var(--text-color);
-    padding: 6rem 0;
+    padding: 7rem 0;
     text-align: center;
     position: relative;
     overflow: hidden;
@@ -230,10 +245,15 @@ nav ul li a:hover::after {
 }
 
 .hero h2 {
-    font-size: 3rem;
+    font-size: 3.5rem;
     margin-bottom: 1.5rem;
     color: var(--primary-dark);
     text-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    background: linear-gradient(to right, var(--primary-dark), var(--primary-color));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
 }
 
 .hero p {
@@ -244,7 +264,7 @@ nav ul li a:hover::after {
 
 /* About section */
 .about {
-    padding: 6rem 0;
+    padding: 7rem 0;
     background-color: var(--light-bg-color);
     position: relative;
     overflow: hidden;
@@ -276,18 +296,19 @@ nav ul li a:hover::after {
 
 .about h2 {
     text-align: center;
-    margin-bottom: 3rem;
+    margin-bottom: 3.5rem;
     position: relative;
+    font-size: 2.5rem;
 }
 
 .about h2::after {
     content: '';
     display: block;
-    width: 80px;
-    height: 3px;
-    background-color: var(--accent-color);
-    margin: 0.8rem auto 0;
-    border-radius: 3px;
+    width: 100px;
+    height: 4px;
+    background: linear-gradient(to right, var(--primary-color), var(--accent-color));
+    margin: 1rem auto 0;
+    border-radius: 4px;
 }
 
 .about-content {
@@ -301,16 +322,25 @@ nav ul li a:hover::after {
 
 .about-image {
     width: 100%;
-    max-width: 400px;
+    max-width: 450px;
     border-radius: var(--border-radius);
     box-shadow: var(--card-shadow);
     overflow: hidden;
     transition: var(--transition);
+    position: relative;
 }
 
-.about-image:hover {
-    transform: translateY(-8px);
-    box-shadow: var(--hover-shadow);
+.about-image::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border: 8px solid white;
+    border-radius: var(--border-radius);
+    z-index: 1;
+    pointer-events: none;
 }
 
 .doctor-image {
@@ -327,15 +357,24 @@ nav ul li a:hover::after {
 .about-text {
     max-width: 800px;
     background-color: white;
-    padding: 2.5rem;
+    padding: 3rem;
     border-radius: var(--border-radius);
     box-shadow: var(--shadow);
     transition: var(--transition);
+    position: relative;
 }
 
-.about-text:hover {
-    box-shadow: var(--hover-shadow);
-    transform: translateY(-5px);
+.about-text::before {
+    content: '';
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    width: 60px;
+    height: 60px;
+    background-color: var(--accent-light);
+    opacity: 0.1;
+    border-radius: 20px;
+    z-index: 0;
 }
 
 .about-text p {
@@ -345,55 +384,77 @@ nav ul li a:hover::after {
 
 /* Services section */
 .services {
-    padding: 6rem 0;
+    padding: 7rem 0;
     position: relative;
+    background-color: white;
 }
 
 .services h2 {
     text-align: center;
-    margin-bottom: 3rem;
+    margin-bottom: 3.5rem;
     position: relative;
+    font-size: 2.5rem;
 }
 
 .services h2::after {
     content: '';
     display: block;
-    width: 80px;
-    height: 3px;
-    background-color: var(--accent-color);
-    margin: 0.8rem auto 0;
-    border-radius: 3px;
+    width: 100px;
+    height: 4px;
+    background: linear-gradient(to right, var(--primary-color), var(--accent-color));
+    margin: 1rem auto 0;
+    border-radius: 4px;
 }
 
 .services-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 2.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 3rem;
 }
 
 .service-card {
     background-color: white;
     border-radius: var(--border-radius);
-    padding: 2.5rem;
+    padding: 3rem;
     box-shadow: var(--card-shadow);
     transition: var(--transition);
-    border-top: 4px solid transparent;
+    border-top: 5px solid transparent;
     height: 100%;
     display: flex;
     flex-direction: column;
+    position: relative;
+    overflow: hidden;
+}
+
+.service-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 0;
+    background: linear-gradient(to right, var(--primary-color), var(--accent-color));
+    transition: height 0.3s ease;
+    opacity: 0.1;
+    z-index: 0;
+}
+
+.service-card:hover::before {
+    height: 100%;
 }
 
 .service-card:hover {
-    transform: translateY(-10px);
+    transform: translateY(-15px);
     border-top-color: var(--accent-color);
 }
 
 .service-card h3 {
-    margin-bottom: 1.2rem;
+    margin-bottom: 1.5rem;
     color: var(--primary-color);
-    font-size: 1.4rem;
+    font-size: 1.6rem;
     position: relative;
-    padding-bottom: 0.8rem;
+    padding-bottom: 1rem;
+    z-index: 1;
 }
 
 .service-card h3::after {
@@ -401,20 +462,23 @@ nav ul li a:hover::after {
     position: absolute;
     bottom: 0;
     right: 0;
-    width: 40px;
-    height: 2px;
-    background-color: var(--accent-light);
+    width: 50px;
+    height: 3px;
+    background: linear-gradient(to right, var(--primary-color), var(--accent-color));
+    border-radius: 3px;
 }
 
 .service-card p {
-    font-size: 1.05rem;
+    font-size: 1.1rem;
     color: var(--light-text-color);
     flex-grow: 1;
+    position: relative;
+    z-index: 1;
 }
 
 /* Appointment section */
 .appointment {
-    padding: 6rem 0;
+    padding: 7rem 0;
     background-color: var(--light-bg-color);
     position: relative;
 }
@@ -434,16 +498,17 @@ nav ul li a:hover::after {
     text-align: center;
     margin-bottom: 1.5rem;
     position: relative;
+    font-size: 2.5rem;
 }
 
 .appointment h2::after {
     content: '';
     display: block;
-    width: 80px;
-    height: 3px;
-    background-color: var(--accent-color);
-    margin: 0.8rem auto 0;
-    border-radius: 3px;
+    width: 100px;
+    height: 4px;
+    background: linear-gradient(to right, var(--primary-color), var(--accent-color));
+    margin: 1rem auto 0;
+    border-radius: 4px;
 }
 
 .appointment > p {
@@ -457,22 +522,41 @@ nav ul li a:hover::after {
 
 .appointment-options {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 3rem;
 }
 
 .appointment-option {
     background-color: white;
     border-radius: var(--border-radius);
-    padding: 2.5rem;
-    box-shadow: var(--shadow);
+    padding: 3rem;
+    box-shadow: var(--card-shadow);
     transition: var(--transition);
     height: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.appointment-option::before {
+    content: '';
+    position: absolute;
+    top: -50px;
+    right: -50px;
+    width: 100px;
+    height: 100px;
+    background-color: var(--accent-light);
+    opacity: 0.05;
+    border-radius: 50%;
+    transition: transform 0.5s ease;
+}
+
+.appointment-option:hover::before {
+    transform: scale(3);
 }
 
 .appointment-option:hover {
     box-shadow: var(--hover-shadow);
-    transform: translateY(-5px);
+    transform: translateY(-10px);
 }
 
 .appointment-option h3 {
@@ -516,9 +600,9 @@ label {
 }
 
 input, textarea {
-    padding: 0.9rem 1rem;
-    border: 1px solid var(--border-color);
-    border-radius: var(--border-radius);
+    padding: 1rem 1.2rem;
+    border: 2px solid var(--border-color);
+    border-radius: var(--small-radius);
     font-family: var(--font-family);
     font-size: 1rem;
     transition: var(--transition);
@@ -528,33 +612,36 @@ input, textarea {
 input:focus, textarea:focus {
     outline: none;
     border-color: var(--primary-color);
-    box-shadow: 0 0 0 3px rgba(63, 81, 181, 0.1);
+    box-shadow: 0 0 0 4px rgba(74, 111, 220, 0.1);
     background-color: white;
 }
 
 button[type="submit"] {
-    margin-top: 0.5rem;
+    margin-top: 1rem;
+    width: 100%;
 }
 
 /* Contact section */
 .contact {
-    padding: 6rem 0;
+    padding: 7rem 0;
+    background-color: white;
 }
 
 .contact h2 {
     text-align: center;
-    margin-bottom: 3rem;
+    margin-bottom: 3.5rem;
     position: relative;
+    font-size: 2.5rem;
 }
 
 .contact h2::after {
     content: '';
     display: block;
-    width: 80px;
-    height: 3px;
-    background-color: var(--accent-color);
-    margin: 0.8rem auto 0;
-    border-radius: 3px;
+    width: 100px;
+    height: 4px;
+    background: linear-gradient(to right, var(--primary-color), var(--accent-color));
+    margin: 1rem auto 0;
+    border-radius: 4px;
 }
 
 .contact-hero {
@@ -579,40 +666,65 @@ button[type="submit"] {
 
 .contact-info {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 2.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 3rem;
 }
 
 .contact-detail {
     text-align: center;
     background-color: white;
-    padding: 2rem;
+    padding: 2.5rem;
     border-radius: var(--border-radius);
-    box-shadow: var(--shadow);
+    box-shadow: var(--card-shadow);
     transition: var(--transition);
+    position: relative;
+    overflow: hidden;
+    border-bottom: 4px solid transparent;
+}
+
+.contact-detail::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 0;
+    bottom: 0;
+    left: 0;
+    background: linear-gradient(to right, var(--primary-color), var(--accent-color));
+    transition: height 0.3s ease;
+    opacity: 0.05;
+    z-index: 0;
+}
+
+.contact-detail:hover::before {
+    height: 100%;
 }
 
 .contact-detail:hover {
     box-shadow: var(--hover-shadow);
-    transform: translateY(-5px);
+    transform: translateY(-10px);
+    border-bottom-color: var(--primary-color);
 }
 
 .contact-detail h3 {
-    margin-bottom: 1rem;
+    margin-bottom: 1.2rem;
     color: var(--primary-color);
-    font-size: 1.3rem;
+    font-size: 1.5rem;
+    position: relative;
+    z-index: 1;
 }
 
 .contact-detail p {
-    font-size: 1.05rem;
+    font-size: 1.15rem;
     color: var(--light-text-color);
+    position: relative;
+    z-index: 1;
 }
 
 /* Footer */
 footer {
     background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
     color: white;
-    padding: 2.5rem 0;
+    padding: 3rem 0;
     text-align: center;
     position: relative;
 }
@@ -730,7 +842,7 @@ footer p {
 @keyframes fadeInUp {
     from {
         opacity: 0;
-        transform: translateY(20px);
+        transform: translateY(30px);
     }
     to {
         opacity: 1;
@@ -739,12 +851,32 @@ footer p {
 }
 
 .about-text, .service-card, .appointment-option, .contact-detail {
-    animation: fadeInUp 0.5s ease-out forwards;
+    animation: fadeInUp 0.6s ease-out forwards;
+    animation-fill-mode: both;
 }
 
-/* Ensure animation doesn't play on very small screens */
-@media (prefers-reduced-motion: reduce) {
-    .about-text, .service-card, .appointment-option, .contact-detail {
-        animation: none;
+.service-card:nth-child(2),
+.appointment-option:nth-child(2),
+.contact-detail:nth-child(2) {
+    animation-delay: 0.1s;
+}
+
+.service-card:nth-child(3),
+.appointment-option:nth-child(3),
+.contact-detail:nth-child(3) {
+    animation-delay: 0.2s;
+}
+
+/* New scroll-based animations */
+@media (prefers-reduced-motion: no-preference) {
+    .fade-in-element {
+        opacity: 0;
+        transform: translateY(30px);
+        transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    }
+    
+    .fade-in-element.visible {
+        opacity: 1;
+        transform: translateY(0);
     }
 } 
