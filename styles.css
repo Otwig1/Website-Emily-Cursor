@@ -294,9 +294,34 @@ nav ul li a:hover::after {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 2rem;
+    gap: 2.5rem;
     position: relative;
     z-index: 1;
+}
+
+.about-image {
+    width: 100%;
+    max-width: 400px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--card-shadow);
+    overflow: hidden;
+    transition: var(--transition);
+}
+
+.about-image:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--hover-shadow);
+}
+
+.doctor-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.5s ease;
+}
+
+.about-image:hover .doctor-image {
+    transform: scale(1.03);
 }
 
 .about-text {
@@ -532,6 +557,26 @@ button[type="submit"] {
     border-radius: 3px;
 }
 
+.contact-hero {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto 3rem;
+    border-radius: var(--border-radius);
+    box-shadow: var(--card-shadow);
+    overflow: hidden;
+}
+
+.contact-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.5s ease;
+}
+
+.contact-hero:hover .contact-image {
+    transform: scale(1.03);
+}
+
 .contact-info {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -635,6 +680,21 @@ footer p {
     
     .about-text p, .service-card p, .appointment > p {
         font-size: 1rem;
+    }
+    
+    .about-content {
+        flex-direction: column;
+    }
+}
+
+@media (min-width: 768px) {
+    .about-content {
+        flex-direction: row;
+        align-items: stretch;
+    }
+    
+    .about-image, .about-text {
+        flex: 1;
     }
 }
 
