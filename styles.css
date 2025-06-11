@@ -176,6 +176,28 @@ header .tagline {
     position: relative;
     font-weight: 400;
     letter-spacing: 0.5px;
+    margin-bottom: 2rem;
+}
+
+.header-image {
+    margin-top: 2rem;
+    text-align: center;
+    position: relative;
+}
+
+.ct-scan-image {
+    max-width: 300px;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transition: var(--transition);
+    opacity: 0.9;
+}
+
+.ct-scan-image:hover {
+    transform: scale(1.05);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+    opacity: 1;
 }
 
 /* Navigation styles */
