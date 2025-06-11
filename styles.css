@@ -183,19 +183,24 @@ header .tagline {
     margin-top: 2rem;
     text-align: center;
     position: relative;
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+    margin-right: calc(-50vw + 50%);
 }
 
 .ct-scan-image {
-    max-width: 300px;
+    width: 100%;
     height: auto;
-    border-radius: 12px;
+    max-height: 400px;
+    object-fit: cover;
+    border-radius: 0;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
     transition: var(--transition);
     opacity: 0.9;
 }
 
 .ct-scan-image:hover {
-    transform: scale(1.05);
+    transform: scale(1.02);
     box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
     opacity: 1;
 }
