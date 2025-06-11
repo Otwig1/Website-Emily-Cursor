@@ -111,4 +111,38 @@ document.addEventListener('DOMContentLoaded', function() {
     if (footerYear) {
         footerYear.innerHTML = footerYear.innerHTML.replace('2023', currentYear);
     }
-}); 
+});
+
+// Media Carousel functionality
+let currentMediaIndex = 0;
+const totalMediaItems = 2;
+
+function showMedia(index) {
+    const mediaItems = document.querySelectorAll('.media-item');
+    
+    // Remove active class from all items
+    mediaItems.forEach(item => item.classList.remove('active'));
+    
+    // Add active class to current item
+    if (mediaItems[index]) {
+        mediaItems[index].classList.add('active');
+        
+        // Pause any videos that are not currently showing
+        mediaItems.forEach((item, i) => {
+            const video = item.querySelector('video');
+            if (video && i !== index) {
+                video.pause();
+            }
+        });
+    }
+}
+
+function nextMedia() {
+    currentMediaIndex = (currentMediaIndex + 1) % totalMediaItems;
+    showMedia(currentMediaIndex);
+}
+
+function prevMedia() {
+    currentMediaIndex = (currentMediaIndex - 1 + totalMediaItems) % totalMediaItems;
+    showMedia(currentMediaIndex);
+} 

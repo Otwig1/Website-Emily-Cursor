@@ -14,7 +14,21 @@
             <h1>ד"ר אמילי אלפנט טוויג</h1>
             <p class="tagline">נוירולוגית מומחית בכאבי ראש ומיגרנות</p>
             <div class="header-image">
-                <img src="Images/CT scan 2.png" alt="סריקת CT מוח" class="ct-scan-image">
+                <div class="media-carousel">
+                    <button class="carousel-arrow carousel-arrow-right" onclick="nextMedia()">&#8250;</button>
+                    <button class="carousel-arrow carousel-arrow-left" onclick="prevMedia()">&#8249;</button>
+                    
+                    <div class="media-item active" id="media-1">
+                        <img src="Images/CT scan 2.png" alt="סריקת CT מוח" class="ct-scan-image">
+                    </div>
+                    
+                    <div class="media-item" id="media-2">
+                        <video class="mri-video" controls>
+                            <source src="Images/Video-MRI-SCAN.mp4" type="video/mp4">
+                            הדפדפן שלך לא תומך בהשמעת וידאו.
+                        </video>
+                    </div>
+                </div>
             </div>
         </div>
     </header>
