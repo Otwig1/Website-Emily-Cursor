@@ -19,7 +19,6 @@
         <div class="container">
             <ul>
                 <li><a href="#about">אודות</a></li>
-                <li><a href="#services">תחומי התמחות</a></li>
                 <li><a href="#contact">צור קשר</a></li>
                 <li><a href="#appointment">קביעת תור</a></li>
             </ul>
@@ -72,45 +71,24 @@
             </div>
         </section>
 
-        <section id="services" class="services">
-            <div class="container">
-                <h2>תחומי התמחות</h2>
-                <div class="services-grid">
-                    <div class="service-card">
-                        <h3>טיפול במיגרנות</h3>
-                        <p>אבחון וטיפול מתקדם בסוגים שונים של מיגרנות, כולל טיפולים תרופתיים וגישות לא תרופתיות.</p>
-                    </div>
-                    <div class="service-card">
-                        <h3>כאבי ראש מתח</h3>
-                        <p>זיהוי הגורמים לכאבי ראש מתח ופיתוח תוכניות טיפול אישיות.</p>
-                    </div>
-                    <div class="service-card">
-                        <h3>כאבי ראש צרוריים (קלסטר)</h3>
-                        <p>גישות טיפוליות מתקדמות לכאבי ראש צרוריים הגורמים לכאב עז.</p>
-                    </div>
-                    <div class="service-card">
-                        <h3>ייעוץ תרופתי</h3>
-                        <p>התאמת טיפול תרופתי אישי למניעה וטיפול בכאבי ראש כרוניים.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
         <section id="appointment" class="appointment">
             <div class="container">
-                <h2>קביעת תור</h2>
-                <p>ניתן לקבוע תור באחת מהדרכים הבאות:</p>
+                <h2>קביעת תור וליצירת קשר</h2>
+                <p>ניתן לקבוע תור ויצירת קשר באחת מהדרכים הבאות:</p>
                 <div class="appointment-options">
                     <div class="appointment-option">
+                        <div class="option-icon">📞</div>
                         <h3>טלפון</h3>
-                        <p>XXX-XXXXXXX</p>
+                        <p><a href="tel:052-9502550">052-9502550</a></p>
                     </div>
                     <div class="appointment-option">
+                        <div class="option-icon">✉️</div>
                         <h3>דוא"ל</h3>
-                        <p>appointments@dremily.com</p>
+                        <p><a href="mailto:info@elefantneurology.com">info@elefantneurology.com</a></p>
                     </div>
                     <div class="appointment-option">
-                        <h3>טופס מקוון</h3>
+                        <div class="option-icon">📝</div>
+                        <h3>השארת פרטים בטופס</h3>
                         <form id="appointment-form">
                             <div class="form-group">
                                 <label for="name">שם מלא:</label>
@@ -130,7 +108,7 @@
                             </div>
                             <div class="form-group">
                                 <label for="message">הערות נוספות:</label>
-                                <textarea id="message" name="message" rows="4"></textarea>
+                                <textarea id="message" name="message" rows="4" placeholder="תיאור התסמינים או שאלות נוספות..."></textarea>
                             </div>
                             <button type="submit" class="btn">שליחה</button>
                         </form>
@@ -141,27 +119,45 @@
 
         <section id="contact" class="contact">
             <div class="container">
-                <h2>צור קשר</h2>
+                <h2>פרטי המרפאה</h2>
                 <div class="contact-hero">
                     <img src="Images/Emily on the stage 2.jpeg" alt="ד״ר אמילי במרפאה" class="contact-image">
                 </div>
                 <div class="contact-info">
-                    <div class="contact-detail">
+                    <div class="contact-detail location">
+                        <div class="contact-icon">📍</div>
                         <h3>כתובת המרפאה</h3>
-                        <p>רחוב הדוגמה 123, תל אביב</p>
+                        <div class="address-details">
+                            <p><strong>סוקולוב 46 הוד השרון</strong></p>
+                            <p>כיכר המושבה</p>
+                            <p>בניין משרדים, קומה 10, משרד 1003</p>
+                        </div>
                     </div>
                     <div class="contact-detail">
+                        <div class="contact-icon">🕒</div>
                         <h3>שעות קבלה</h3>
                         <p>ימים א'-ה': 09:00-17:00</p>
                         <p>יום ו': 09:00-13:00</p>
                     </div>
                     <div class="contact-detail">
+                        <div class="contact-icon">📞</div>
                         <h3>טלפון</h3>
-                        <p>XXX-XXXXXXX</p>
+                        <p><a href="tel:052-9502550">052-9502550</a></p>
                     </div>
                     <div class="contact-detail">
+                        <div class="contact-icon">✉️</div>
                         <h3>דוא"ל</h3>
-                        <p>info@dremily.com</p>
+                        <p><a href="mailto:info@elefantneurology.com">info@elefantneurology.com</a></p>
+                    </div>
+                </div>
+                
+                <!-- Google Maps placeholder -->
+                <div class="map-container">
+                    <h3>מיקום המרפאה</h3>
+                    <div class="map-placeholder">
+                        <p>🗺️ מפה אינטראקטיבית של מיקום המרפאה</p>
+                        <p>סוקולוב 46, הוד השרון</p>
+                        <small>לחצו כאן לפתיחה ב-Google Maps</small>
                     </div>
                 </div>
             </div>
