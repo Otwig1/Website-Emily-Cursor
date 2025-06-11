@@ -475,7 +475,7 @@ nav ul li a:hover::before {
 }
 
 .about-text::after {
-    content: '🏥';
+    content: '';
     position: absolute;
     top: 20px;
     right: 20px;
@@ -514,7 +514,7 @@ nav ul li a:hover::before {
 }
 
 .recognition-gallery h3::before {
-    content: '🏆';
+    content: '';
     position: absolute;
     top: -10px;
     right: 50%;
@@ -622,7 +622,7 @@ nav ul li a:hover::before {
 }
 
 .appointment h2::before {
-    content: '📞';
+    content: '';
     position: absolute;
     top: -15px;
     right: 50%;
@@ -836,7 +836,7 @@ button[type="submit"] {
 }
 
 .contact h2::before {
-    content: '🏥';
+    content: '';
     position: absolute;
     top: -15px;
     right: 50%;
@@ -949,7 +949,7 @@ button[type="submit"] {
 }
 
 .contact-detail.location::after {
-    content: '🌟';
+    content: '';
     position: absolute;
     top: 20px;
     left: 20px;
