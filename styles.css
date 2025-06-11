@@ -1245,48 +1245,68 @@ footer p {
 
 @media (max-width: 768px) {
     header h1 {
-        font-size: 3rem;
+        font-size: 2.5rem;
+        line-height: 1.2;
+        margin-bottom: 0.5rem;
+    }
+
+    header .tagline {
+        font-size: 1rem;
+        margin-bottom: 1.5rem;
+    }
+
+    nav {
+        padding: 0.8rem 0;
     }
 
     nav ul {
         flex-direction: column;
         align-items: center;
+        gap: 0.5rem;
     }
 
     nav ul li {
-        margin: 0.2rem 0;
+        margin: 0;
+        width: 100%;
+        text-align: center;
     }
 
     nav ul li a {
-        padding: 0.5rem 0;
+        padding: 0.8rem 1rem;
+        display: block;
+        font-size: 1rem;
+        border-radius: var(--small-radius);
     }
 
     .hero {
-        padding: 5rem 0;
+        padding: 4rem 0;
     }
 
     .hero h2 {
-        font-size: 2.5rem;
+        font-size: 2rem;
+        line-height: 1.3;
+        margin-bottom: 1rem;
     }
 
-    .about, .appointment, .contact {
-        padding: 5rem 0;
+    .about, .appointment, .contact, .articles {
+        padding: 4rem 0;
     }
 
     .appointment-options, .contact-info {
         grid-template-columns: 1fr;
+        gap: 2rem;
     }
 
     .about-content {
         flex-direction: column;
-        gap: 3rem;
+        gap: 2rem;
     }
 
     .emily-portrait {
         flex: none;
-        min-height: 300px;
+        min-height: 250px;
         width: 100%;
-        max-width: 300px;
+        max-width: 250px;
         margin: 0 auto;
     }
 
@@ -1295,8 +1315,13 @@ footer p {
     }
 
     .carousel-arrow {
-        font-size: 1.2rem;
-        padding: 0.4rem 0.6rem;
+        font-size: 1rem;
+        padding: 0.5rem;
+        width: 40px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 
     .carousel-arrow-left {
@@ -1308,69 +1333,117 @@ footer p {
     }
 
     .media-carousel {
-        height: 250px;
+        height: 220px;
+        margin-bottom: 2rem;
     }
 
     .ct-scan-image, .mri-video {
-        max-height: 250px;
+        max-height: 220px;
     }
     
     .option-icon, .contact-icon {
-        font-size: 2.5rem;
+        font-size: 2rem;
+        margin-bottom: 1rem;
     }
     
     .appointment-option, .contact-detail {
-        padding: 2rem 1.5rem;
+        padding: 1.5rem;
+        text-align: center;
+    }
+    
+    .appointment-option h3, .contact-detail h3 {
+        font-size: 1.3rem;
+        margin-bottom: 1rem;
     }
     
     .map-placeholder {
-        padding: 3rem 1.5rem;
+        padding: 2rem 1rem;
     }
     
     .map-container h3 {
-        font-size: 1.8rem;
+        font-size: 1.5rem;
     }
     
     .recognition-images {
         grid-template-columns: 1fr;
-        max-width: 400px;
+        max-width: 350px;
         margin: 0 auto;
+        gap: 1.5rem;
     }
     
     .recognition-image {
-        height: 250px;
+        height: 200px;
     }
     
-    .articles {
-        padding: 4rem 0;
-    }
-    
+    /* Articles mobile optimization */
     .articles-content {
         padding: 0 1rem;
+        gap: 2rem;
     }
     
     .articles h2 {
         font-size: 2rem;
+        margin-bottom: 2rem;
     }
     
     .article-item {
         flex-direction: column;
         gap: 0;
+        margin-bottom: 1rem;
+        min-height: auto;
     }
     
     .article-image {
         flex: none;
         height: auto;
-        min-height: 180px;
-        max-height: 300px;
+        min-height: 150px;
+        max-height: 250px;
+        width: 100%;
+    }
+    
+    .article-preview-image {
+        padding: 0.3rem;
+        max-width: 100%;
     }
     
     .article-content {
-        padding: 1.5rem;
+        padding: 1.2rem;
+    }
+    
+    .article-content h3 {
+        font-size: 1.2rem;
+        line-height: 1.4;
+        margin-bottom: 0.8rem;
+    }
+    
+    .article-content p {
+        font-size: 0.95rem;
+        line-height: 1.5;
+        margin-bottom: 1rem;
     }
     
     .video-content {
-        padding: 1.5rem;
+        padding: 1.2rem;
+    }
+    
+    .video-content h3 {
+        font-size: 1.2rem;
+        margin-bottom: 0.8rem;
+    }
+    
+    .video-content p {
+        font-size: 0.95rem;
+        margin-bottom: 0.8rem;
+    }
+    
+    .video-highlights {
+        font-size: 0.85rem !important;
+        padding: 0.6rem;
+        margin-bottom: 1rem !important;
+    }
+    
+    .video-embed {
+        margin-bottom: 1rem;
     }
 }
 
@@ -1389,67 +1462,111 @@ footer p {
 @media (max-width: 480px) {
     .container {
         width: 95%;
-        padding: 0 10px;
+        padding: 0 8px;
+    }
+
+    header {
+        padding: 2rem 0;
     }
 
     header h1 {
-        font-size: 2rem;
+        font-size: 1.8rem;
+        line-height: 1.2;
     }
 
     header .tagline {
-        font-size: 1rem;
+        font-size: 0.9rem;
         margin-bottom: 1rem;
     }
 
+    nav {
+        padding: 0.5rem 0;
+    }
+
+    nav ul li a {
+        font-size: 0.9rem;
+        padding: 0.6rem 0.8rem;
+    }
+
+    .hero {
+        padding: 3rem 0;
+    }
+
     .hero h2 {
-        font-size: 1.8rem;
+        font-size: 1.6rem;
+        line-height: 1.3;
     }
 
     .hero p {
-        font-size: 1.1rem;
+        font-size: 1rem;
+        line-height: 1.5;
     }
 
     .btn {
-        padding: 12px 24px;
+        padding: 10px 20px;
         font-size: 0.9rem;
+    }
+
+    .about, .appointment, .contact, .articles {
+        padding: 3rem 0;
+    }
+
+    .about h2, .appointment h2, .contact h2, .articles h2 {
+        font-size: 1.8rem;
+        margin-bottom: 2rem;
     }
     
     .option-icon, .contact-icon {
         font-size: 1.8rem;
-        margin-bottom: 1rem;
+        margin-bottom: 0.8rem;
     }
     
     .appointment-option h3, .contact-detail h3 {
-        font-size: 1.2rem;
+        font-size: 1.1rem;
+        margin-bottom: 0.8rem;
     }
     
     .appointment-option, .contact-detail {
-        padding: 1.5rem 1rem;
+        padding: 1.2rem 0.8rem;
+    }
+    
+    .appointment-option p, .contact-detail p {
+        font-size: 0.9rem;
+        line-height: 1.4;
+    }
+    
+    .map-placeholder {
+        padding: 1.5rem 0.8rem;
     }
     
     .map-placeholder p {
-        font-size: 1.1rem;
+        font-size: 1rem;
     }
     
     form {
-        padding: 1.5rem;
+        padding: 1.2rem;
     }
     
-    .about h2, .appointment h2, .contact h2 {
-        font-size: 1.8rem;
+    input, textarea {
+        font-size: 0.9rem;
+        padding: 0.8rem;
     }
 
+    /* Media carousel mobile optimization */
     .media-carousel {
-        height: 200px;
+        height: 180px;
+        margin-bottom: 1.5rem;
     }
 
     .ct-scan-image, .mri-video {
-        max-height: 200px;
+        max-height: 180px;
     }
 
     .carousel-arrow {
-        font-size: 1rem;
-        padding: 0.3rem 0.5rem;
+        font-size: 0.8rem;
+        padding: 0.4rem;
+        width: 32px;
+        height: 32px;
     }
 
     .carousel-arrow-left {
@@ -1460,18 +1577,30 @@ footer p {
         right: 0.3rem;
     }
 
+    /* About section mobile */
     .emily-portrait {
-        min-height: 250px;
-        max-width: 250px;
+        width: 100%;
+        max-width: 200px;
+        min-height: 200px;
     }
 
     .about-text {
-        padding: 2rem 1.5rem;
+        padding: 1.2rem 0.8rem;
     }
 
-    nav ul li a {
+    .about-text p {
         font-size: 0.9rem;
-        padding: 0.6rem 1rem;
+        line-height: 1.5;
+    }
+
+    /* Recognition images mobile */
+    .recognition-images {
+        max-width: 280px;
+        gap: 1rem;
+    }
+    
+    .recognition-image {
+        height: 160px;
     }
 }
 
@@ -1698,57 +1827,129 @@ footer p {
     animation-delay: 0.4s;
 }
 
-/* Additional responsive styles for mobile */
+/* Additional responsive styles for mobile articles */
 @media (max-width: 480px) {
-    .articles {
-        padding: 3rem 0;
-    }
-    
+    /* Articles mobile optimization */
     .articles-content {
         padding: 0 0.5rem;
+        gap: 1.5rem;
+    }
+    
+    .article-item {
+        border-radius: 8px;
+        margin-bottom: 0.5rem;
+        min-height: auto;
     }
     
     .article-image {
-        min-height: 150px;
-        max-height: 250px;
+        min-height: 120px;
+        max-height: 200px;
+        background: #f8f9fa;
     }
     
     .article-preview-image {
+        padding: 0.2rem;
         object-fit: contain;
         width: 100%;
         height: auto;
     }
     
-    .articles h2 {
-        font-size: 1.8rem;
+    .article-content {
+        padding: 1rem 0.8rem;
     }
     
     .article-content h3 {
-        font-size: 1.2rem;
+        font-size: 1.1rem;
+        line-height: 1.3;
+        margin-bottom: 0.6rem;
     }
     
     .article-content p {
-        font-size: 0.9rem;
+        font-size: 0.85rem;
+        line-height: 1.4;
+        margin-bottom: 0.8rem;
     }
     
-    .article-content {
-        padding: 1rem;
+    .article-link, .video-link {
+        font-size: 0.9rem;
+        padding: 0.5rem 0;
+        display: inline-block;
+        min-height: 44px;
+        line-height: 1.4;
     }
     
     .video-content {
-        padding: 1rem;
+        padding: 1rem 0.8rem;
     }
     
     .video-content h3 {
-        font-size: 1.2rem;
+        font-size: 1.1rem;
+        margin-bottom: 0.6rem;
     }
     
     .video-content p {
-        font-size: 0.9rem;
+        font-size: 0.85rem;
+        line-height: 1.4;
+        margin-bottom: 0.6rem;
     }
     
     .video-highlights {
-        font-size: 0.8rem !important;
-        padding: 0.6rem;
+        font-size: 0.75rem !important;
+        padding: 0.5rem;
+        margin-bottom: 0.8rem !important;
+    }
+    
+    .video-embed {
+        margin-bottom: 0.8rem;
+        border-radius: 6px;
+    }
+}
+
+/* Mobile touch optimizations */
+@media (max-width: 768px) {
+    /* Improve touch targets */
+    .btn, .article-link, .video-link {
+        min-height: 44px;
+        padding: 0.8rem 1.2rem;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+    
+    nav ul li a {
+        min-height: 44px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    /* Better spacing for touch */
+    .appointment-options, .contact-info {
+        gap: 1.5rem;
+    }
+    
+    /* Better form experience */
+    input, textarea, select {
+        font-size: 16px; /* Prevents zoom on iOS */
+        border-radius: 8px;
+        min-height: 44px;
+    }
+    
+    /* Smooth scrolling sections */
+    .about, .articles, .appointment, .contact {
+        scroll-margin-top: 80px;
+    }
+    
+    /* Improved carousel for mobile */
+    .carousel-arrow {
+        background: rgba(255, 255, 255, 0.9);
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+    
+    .carousel-arrow:hover {
+        background: rgba(255, 255, 255, 1);
+        transform: scale(1.1);
     }
 } 
