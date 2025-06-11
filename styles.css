@@ -2,22 +2,22 @@
 @import url('https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;600;700&family=Rubik:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap');
 
 :root {
-    --primary-color: #4a6fdc;
-    --primary-dark: #3451b2;
-    --primary-light: #6b8cfc;
-    --secondary-color: #d6e5ff;
-    --accent-color: #ff7e36;
-    --accent-light: #ffa76a;
-    --accent-dark: #e55a1c;
+    --primary-color: #2d3748;
+    --primary-dark: #1a202c;
+    --primary-light: #4a5568;
+    --secondary-color: #f7fafc;
+    --accent-color: #3182ce;
+    --accent-light: #63b3ed;
+    --accent-dark: #2c5282;
     --text-color: #2d3748;
     --light-text-color: #4a5568;
-    --background-color: #fff;
-    --light-bg-color: #f8faff;
+    --background-color: #ffffff;
+    --light-bg-color: #ffffff;
     --border-color: #e2e8f0;
     --shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
     --hover-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
-    --card-shadow: 0 20px 40px rgba(32, 56, 117, 0.1);
-    --btn-shadow: 0 8px 25px rgba(74, 111, 220, 0.3);
+    --card-shadow: 0 20px 40px rgba(45, 55, 72, 0.1);
+    --btn-shadow: 0 8px 25px rgba(49, 130, 206, 0.3);
     --transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
     --font-family: 'Inter', 'Assistant', 'Rubik', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     --border-radius: 16px;
@@ -25,7 +25,7 @@
     --header-height: 80px;
     --gradient-primary: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-light) 100%);
     --gradient-accent: linear-gradient(135deg, var(--accent-color) 0%, var(--accent-light) 100%);
-    --gradient-bg: linear-gradient(135deg, #f8faff 0%, #ffffff 50%, #f0f7ff 100%);
+    --gradient-bg: linear-gradient(135deg, #ffffff 0%, #ffffff 50%, #f8fafc 100%);
 }
 
 * {
@@ -114,7 +114,7 @@ a:hover {
 
 .btn:hover {
     transform: translateY(-6px) scale(1.02);
-    box-shadow: 0 15px 35px rgba(255, 126, 54, 0.4);
+    box-shadow: 0 15px 35px rgba(49, 130, 206, 0.4);
 }
 
 .btn:active {
@@ -123,13 +123,14 @@ a:hover {
 
 /* Header styles */
 header {
-    background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 50%, #1a365d 100%);
-    color: white;
+    background: linear-gradient(135deg, #ffffff 0%, #f8fafc 50%, #ffffff 100%);
+    color: var(--text-color);
     padding: 4rem 0;
     text-align: center;
     position: relative;
     overflow: hidden;
     clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+    border-bottom: 1px solid var(--border-color);
 }
 
 header::before {
@@ -160,11 +161,11 @@ header::after {
 }
 
 header h1 {
-    color: white;
+    color: var(--primary-dark);
     font-size: 3.8rem;
     margin-bottom: 0.5rem;
     position: relative;
-    text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    text-shadow: none;
     font-weight: 700;
     letter-spacing: -0.02em;
 }
@@ -308,7 +309,7 @@ nav ul li a:hover::before {
 /* About section */
 .about {
     padding: 8rem 0;
-    background: linear-gradient(135deg, #f8faff 0%, #ffffff 50%, #f0f8ff 100%);
+    background: #ffffff;
     position: relative;
     overflow: hidden;
 }
@@ -319,7 +320,7 @@ nav ul li a:hover::before {
     width: 400px;
     height: 400px;
     border-radius: 50%;
-    background: radial-gradient(circle, rgba(74, 111, 220, 0.1) 0%, transparent 70%);
+    background: radial-gradient(circle, rgba(45, 55, 72, 0.05) 0%, transparent 70%);
     top: -200px;
     right: -200px;
     z-index: 0;
@@ -332,7 +333,7 @@ nav ul li a:hover::before {
     width: 300px;
     height: 300px;
     border-radius: 50%;
-    background: radial-gradient(circle, rgba(255, 126, 54, 0.08) 0%, transparent 70%);
+    background: radial-gradient(circle, rgba(49, 130, 206, 0.03) 0%, transparent 70%);
     bottom: -150px;
     left: -150px;
     z-index: 0;
