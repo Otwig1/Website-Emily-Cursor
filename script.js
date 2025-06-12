@@ -113,9 +113,10 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 
-// Media Carousel functionality
+// Media Carousel functionality - Automatic
 let currentMediaIndex = 0;
-const totalMediaItems = 2;
+const totalMediaItems = 3; // Now we have 3 items: head-image, CT scan, and MRI video
+let carouselInterval;
 
 function showMedia(index) {
     const mediaItems = document.querySelectorAll('.media-item');
@@ -127,11 +128,15 @@ function showMedia(index) {
     if (mediaItems[index]) {
         mediaItems[index].classList.add('active');
         
-        // Pause any videos that are not currently showing
+        // Handle videos - play current video and pause others
         mediaItems.forEach((item, i) => {
             const video = item.querySelector('video');
-            if (video && i !== index) {
-                video.pause();
+            if (video) {
+                if (i === index) {
+                    video.play().catch(e => console.log('Video play failed:', e));
+                } else {
+                    video.pause();
+                }
             }
         });
     }
@@ -142,7 +147,36 @@ function nextMedia() {
     showMedia(currentMediaIndex);
 }
 
-function prevMedia() {
-    currentMediaIndex = (currentMediaIndex - 1 + totalMediaItems) % totalMediaItems;
-    showMedia(currentMediaIndex);
-} 
+function startAutoCarousel() {
+    // Clear any existing interval
+    if (carouselInterval) {
+        clearInterval(carouselInterval);
+    }
+    
+    // Start automatic carousel - change every 4 seconds
+    carouselInterval = setInterval(() => {
+        nextMedia();
+    }, 4000);
+}
+
+function stopAutoCarousel() {
+    if (carouselInterval) {
+        clearInterval(carouselInterval);
+    }
+}
+
+// Initialize carousel when DOM is loaded
+document.addEventListener('DOMContentLoaded', function() {
+    // Show first media item
+    showMedia(0);
+    
+    // Start automatic carousel
+    startAutoCarousel();
+    
+    // Pause carousel on hover and resume on mouse leave
+    const carousel = document.querySelector('.media-carousel');
+    if (carousel) {
+        carousel.addEventListener('mouseenter', stopAutoCarousel);
+        carousel.addEventListener('mouseleave', startAutoCarousel);
+    }
+}); 
